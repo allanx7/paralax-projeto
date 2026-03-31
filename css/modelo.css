@@ -145,6 +145,6 @@ footer a {
     .imagem2,
     .imagem3 {
         min-height: 58vh;
-        background-attachment: scroll;
+        background-attachment: fixed;
     }
 }
