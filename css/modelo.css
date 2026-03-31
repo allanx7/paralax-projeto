@@ -1,109 +1,152 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Datatype:wght@100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Datatype:wght@100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Trispace:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Quicksand:wght@400;600;700&display=swap");
 
 :root {
-    --fonte-padrao: 'Quicksand', 'sans-serif';
-    --fonte-destaque: 'Playfair Display', serif, "cursive";
+    --fonte-padrao: "Quicksand", sans-serif;
+    --fonte-destaque: "Playfair Display", serif;
+    --cor-fundo: #d4cece;
+    --cor-texto: #141414;
+    --cor-overlay: rgba(0, 0, 0, 0.52);
 }
 
 * {
-    padding: 0px;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html body {
-    background-color: rgb(204, 196, 196);
-    
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-padrao);
+    overflow-x: hidden;
 }
 
 header {
     background-color: #000;
-   color: #fff;
-    padding-top: 50px;
-    padding-bottom: 30px;
+    color: #fff;
     text-align: center;
+    padding: clamp(2.2rem, 5vw, 4.2rem) 1rem clamp(1.4rem, 3vw, 2.2rem);
 }
 
 header h1 {
+    font-family: var(--fonte-destaque);
+    font-size: clamp(2rem, 6vw, 4.3rem);
     font-variant: small-caps;
-    font-size: 20px;
+    letter-spacing: 0.08em;
 }
 
-section p {
-    margin-left: 20px;
-    font-family: cursive;
-    text-shadow: #000000 0px 2px 3px;
+header p {
+    margin-top: 0.6rem;
+    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
 }
 
 section {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    display: flexbox;
-    padding: 20px;
-    letter-spacing: 2px;
-    line-height: 30px;
+    padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 5rem);
 }
 
-.imagem p {
-    margin-top: 10px;
-    padding: 9px;
-    background-color: #0000003a;
-    margin-bottom: -10px;
-    border-radius: 2px 2px 2px 2px;
-    color: rgb(212, 207, 207);
+section p {
+    max-width: min(90vw, 68ch);
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.15vw + 0.85rem, 1.45rem);
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+}
+
+.normal1,
+.normal2,
+.normal3,
+.normal4 {
+    background-color: #f6f3f3;
+}
+
+.imagem,
+.imagem2,
+.imagem3 {
+    min-height: clamp(290px, 56vh, 560px);
+    display: flex;
+    align-items: center;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.imagem p,
+.imagem2 p,
+.imagem3 p {
+    margin: 0;
+    background-color: var(--cor-overlay);
+    color: #f0f0f0;
+    border-radius: 10px;
+    padding: clamp(0.9rem, 1.6vw, 1.5rem);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 #imagem {
-    background-image: url(../img/foto\ de\ flor\ cordel.jpg!d);
-    background-size:cover;
-    background-position: center left;
-    height: 40vh;
-    display: flex;
-   background-attachment: fixed;
+    background-image: url("../img/foto de flor cordel.jpg!d");
 }
-
-.imagem2 p {
-    margin-top: -10px;
-    padding: 9px;
-    background-color: #0000003a;
-    margin-bottom: -10px;
-    border-radius: 2px 2px 2px 2px;
-    color: rgb(212, 207, 207);
-}
-
 
 #imagem2 {
-    background-image: url(../img/livro\ aberto.jpg);
-    background-size:cover;
-    background-position: center left;
-    height: 40vh;
-    display: flex;
-   background-attachment: fixed;
+    background-image: url("../img/livro aberto.jpg");
+}
+
+#imagem3 {
+    background-image: url("../img/wallpaper006.jpg");
 }
 
 a {
-    color: #462ba8;
+    color: #4d34bc;
     text-decoration: none;
 }
 
 a:hover {
-    color: #3526b6;
+    color: #2e1f80;
     text-decoration: underline;
 }
 
-footer a {
-    color: #2041b1;
-    text-decoration: none;
-}
-
 footer {
+    margin-top: clamp(2rem, 5vw, 4rem);
     background-color: #000;
     color: #fff;
     text-align: center;
-    margin-top: 35px;
-    margin-bottom: -21px;
-    margin-left: -23px;
-    margin-right: -20px;
+    padding: 1.2rem 1rem;
+}
+
+footer p {
+    margin: 0 auto;
+    max-width: 80ch;
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+    line-height: 1.6;
+}
+
+footer a {
+    color: #86a2ff;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        letter-spacing: 0.04em;
+    }
+
+    section {
+        padding: 1.6rem 1rem;
+    }
+
+    section p {
+        max-width: 100%;
+        letter-spacing: 0;
+        line-height: 1.75;
+    }
+
+    .imagem,
+    .imagem2,
+    .imagem3 {
+        min-height: 58vh;
+        background-attachment: scroll;
+    }
 }
